@@ -1,0 +1,6 @@
+node_modules
+dist
+benchmark-results
+.git
+.env
+*.log
