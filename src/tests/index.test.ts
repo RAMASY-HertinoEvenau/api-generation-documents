@@ -1,0 +1,11 @@
+import "./appError.test";
+import "./asyncHandler.test";
+import "./circuitBreaker.test";
+import "./circuitBreaker.comprehensive.test";
+import "./documentValidators.test";
+import "./documentValidators.comprehensive.test";
+import "./errorHandler.test";
+import "./healthService.test";
+import "./healthStatus.test";
+import "./notFound.test";
+import "./pdfGenerator.test";
