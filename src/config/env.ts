@@ -10,6 +10,7 @@ const envSchema = z.object({
   MONGODB_URI: z.string().min(1, "MONGODB_URI is required"),
   MONGODB_SERVER_SELECTION_TIMEOUT_MS: z.coerce.number().int().positive().default(3000),
   MONGODB_RECONNECT_INTERVAL_MS: z.coerce.number().int().positive().default(5000),
+  REDIS_URL: z.string().optional().transform((value) => value || undefined),
   REDIS_HOST: z.string().min(1).default("127.0.0.1"),
   REDIS_PORT: z.coerce.number().int().positive().default(6379),
   REDIS_PASSWORD: z.string().optional().transform((value) => value || undefined),

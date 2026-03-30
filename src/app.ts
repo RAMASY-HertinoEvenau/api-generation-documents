@@ -14,6 +14,7 @@ import { asyncHandler } from "./utils/asyncHandler";
 export function createApp() {
   const app = express();
 
+  app.set("trust proxy", true);
   app.disable("x-powered-by");
   app.use(helmet());
   app.use(express.json({ limit: "1mb" }));
@@ -48,6 +49,15 @@ export function createApp() {
     })
   );
 
+  app.get("/", (_req, res) => {
+    res.json({
+      message: "ProcessIQ Document Service",
+      docs: "/docs",
+      openapi: "/openapi.json",
+      health: "/health",
+      metrics: "/metrics"
+    });
+  });
   app.get("/health", asyncHandler(getHealthController));
   app.get("/metrics", asyncHandler(getPrometheusMetricsController));
 

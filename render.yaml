@@ -16,6 +16,11 @@ services:
           type: redis
           name: processiq-redis
           property: host
+      - key: REDIS_URL
+        fromService:
+          type: redis
+          name: processiq-redis
+          property: connectionString
       - key: REDIS_PORT
         fromService:
           type: redis
@@ -67,6 +72,11 @@ services:
           type: redis
           name: processiq-redis
           property: host
+      - key: REDIS_URL
+        fromService:
+          type: redis
+          name: processiq-redis
+          property: connectionString
       - key: REDIS_PORT
         fromService:
           type: redis

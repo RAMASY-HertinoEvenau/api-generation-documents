@@ -5,12 +5,7 @@ export const openApiDocument = {
     version: "1.0.0",
     description: "API de generation de documents PDF avec traitement asynchrone par batch."
   },
-  servers: [
-    {
-      url: "http://localhost:3000",
-      description: "Environnement local"
-    }
-  ],
+  servers: [],
   tags: [
     {
       name: "Health",
@@ -619,3 +614,17 @@ export const openApiDocument = {
     }
   }
 } as const;
+
+export function buildOpenApiDocument(serverUrl?: string) {
+  return {
+    ...openApiDocument,
+    servers: serverUrl
+      ? [
+          {
+            url: serverUrl,
+            description: "Environnement courant"
+          }
+        ]
+      : []
+  };
+}
