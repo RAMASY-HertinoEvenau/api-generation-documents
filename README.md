@@ -12,6 +12,8 @@ Le service permet de :
 
 Le traitement est fait de maniere asynchrone avec Bull et Redis. Les PDFs sont stockes dans MongoDB avec GridFS.
 
+En local ou en deploiement classique, le projet utilise un worker separe. Pour un deploiement Render gratuit, l'API peut aussi lancer le traitement en mode embarque avec `RUN_EMBEDDED_WORKER=true`.
+
 ## Documentation API
 
 - Swagger UI : `GET /docs`
@@ -241,10 +243,11 @@ Les volumes `mongo-data` et `redis-data` gardent les donnees entre deux lancemen
 Le fichier [render.yaml](render.yaml) prepare :
 
 - un service web pour l'API
-- un worker
 - une instance Redis
 
 MongoDB doit etre fourni a part, par exemple via MongoDB Atlas, avec `MONGODB_URI`.
+
+Sur Render gratuit, le traitement des jobs tourne dans le meme service que l'API avec `RUN_EMBEDDED_WORKER=true`. Le mode avec worker separe reste disponible en local ou sur une offre qui accepte un background worker.
 
 URL de deploiement :
 

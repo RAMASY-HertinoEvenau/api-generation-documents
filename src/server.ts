@@ -5,12 +5,25 @@ import { logger } from "./config/logger";
 import { createApp } from "./app";
 import { pdfWorkerPool } from "./lib/pdfWorkerPool";
 import { documentQueue } from "./queues/documentQueue";
-import { registerMemoryFallbackWorker } from "./services/documentQueueRuntime";
+import { registerDocumentWorker, registerMemoryFallbackWorker } from "./services/documentQueueRuntime";
 
 async function bootstrap() {
   await connectToMongo();
   startMongoReconnectLoop("api");
   registerMemoryFallbackWorker("api");
+
+  if (env.RUN_EMBEDDED_WORKER) {
+    await pdfWorkerPool.waitUntilReady();
+    await registerDocumentWorker("api-embedded-worker");
+    logger.info(
+      {
+        concurrency: env.DOCUMENT_CONCURRENCY,
+        queue: env.DOCUMENT_QUEUE_NAME,
+        pdfWorkerThreads: env.PDF_WORKER_THREADS
+      },
+      "Embedded worker enabled in API process"
+    );
+  }
 
   const app = createApp();
   const server = createServer(app);

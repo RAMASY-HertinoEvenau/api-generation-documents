@@ -7,6 +7,10 @@ dotenv.config();
 const envSchema = z.object({
   PORT: z.coerce.number().int().positive().default(3000),
   LOG_LEVEL: z.string().default("info"),
+  RUN_EMBEDDED_WORKER: z
+    .string()
+    .optional()
+    .transform((value) => value === "true"),
   MONGODB_URI: z.string().min(1, "MONGODB_URI is required"),
   MONGODB_SERVER_SELECTION_TIMEOUT_MS: z.coerce.number().int().positive().default(3000),
   MONGODB_RECONNECT_INTERVAL_MS: z.coerce.number().int().positive().default(5000),
