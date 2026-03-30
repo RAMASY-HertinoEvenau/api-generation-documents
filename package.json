@@ -1,0 +1,53 @@
+{
+  "name": "processiq-document-service",
+  "version": "1.0.0",
+  "description": "High-throughput document generation API with Express, Bull, Redis, MongoDB and GridFS.",
+  "main": "dist/server.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsx watch src/server.ts",
+    "dev:worker": "tsx watch src/worker.ts",
+    "lint": "eslint .",
+    "start": "node dist/server.js",
+    "start:worker": "node dist/worker.js",
+    "test": "npm run build && node --test dist/tests/index.test.js",
+    "benchmark": "tsx src/scripts/benchmark.ts --no-spawn",
+    "benchmark:local": "npm run build && node dist/scripts/benchmark.js"
+  },
+  "keywords": [
+    "express",
+    "typescript",
+    "bull",
+    "redis",
+    "mongodb",
+    "gridfs",
+    "pdf"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "bull": "^4.16.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^8.3.2",
+    "helmet": "^8.1.0",
+    "mongoose": "^8.12.2",
+    "pdfkit": "^0.17.1",
+    "pidusage": "^4.0.1",
+    "pino": "^9.7.0",
+    "pino-http": "^10.4.0",
+    "prom-client": "^15.1.3",
+    "swagger-ui-express": "^5.0.1",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/express": "^5.0.1",
+    "@types/node": "^22.13.14",
+    "@types/pdfkit": "^0.13.8",
+    "@types/swagger-ui-express": "^4.1.8",
+    "eslint": "^10.1.0",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2",
+    "typescript-eslint": "^8.58.0"
+  }
+}
