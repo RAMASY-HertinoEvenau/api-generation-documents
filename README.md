@@ -20,7 +20,7 @@ En local ou en deploiement classique, le projet utilise un worker separe. Pour u
 - OpenAPI JSON : `GET /openapi.json`
 - Health check : `GET /health`
 - Metriques Prometheus : `GET /metrics`
-- URL de deploiement : `https://api-generation-documents.onrender.com/`
+- URL de deploiement : `https://api-generation-documents-kid0.onrender.com/`
 - Collection Postman : [postman/ProcessIQ Document Service.postman_collection.json](postman/ProcessIQ%20Document%20Service.postman_collection.json)
 - Commandes `curl` : [docs/curl-commands.md](docs/curl-commands.md)
 
@@ -252,10 +252,10 @@ Sur Render gratuit, le traitement des jobs tourne dans le meme service que l'API
 URL de deploiement :
 
 ```text
-https://api-generation-documents.onrender.com/
-https://api-generation-documents.onrender.com/health
-https://api-generation-documents.onrender.com/docs
-https://api-generation-documents.onrender.com/metrics
+https://api-generation-documents-kid0.onrender.com/
+https://api-generation-documents-kid0.onrender.com/health
+https://api-generation-documents-kid0.onrender.com/docs
+https://api-generation-documents-kid0.onrender.com/metrics
 ```
 
 ## Benchmark
@@ -292,4 +292,4 @@ curl http://localhost:3000/openapi.json
 - [postman/ProcessIQ Document Service.postman_collection.json](postman/ProcessIQ%20Document%20Service.postman_collection.json)
 - [docs/curl-commands.md](docs/curl-commands.md)
 - [render.yaml](render.yaml)
-- `https://api-generation-documents.onrender.com/`
+- `https://api-generation-documents-kid0.onrender.com/`
