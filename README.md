@@ -18,6 +18,7 @@ Le traitement est fait de maniere asynchrone avec Bull et Redis. Les PDFs sont s
 - OpenAPI JSON : `GET /openapi.json`
 - Health check : `GET /health`
 - Metriques Prometheus : `GET /metrics`
+- URL de deploiement : `https://api-generation-documents.onrender.com/`
 - Collection Postman : [postman/ProcessIQ Document Service.postman_collection.json](postman/ProcessIQ%20Document%20Service.postman_collection.json)
 - Commandes `curl` : [docs/curl-commands.md](docs/curl-commands.md)
 
@@ -245,12 +246,13 @@ Le fichier [render.yaml](render.yaml) prepare :
 
 MongoDB doit etre fourni a part, par exemple via MongoDB Atlas, avec `MONGODB_URI`.
 
-Exemple d'URL apres deploiement :
+URL de deploiement :
 
 ```text
-https://<service-render>/health
-https://<service-render>/docs
-https://<service-render>/metrics
+https://api-generation-documents.onrender.com/
+https://api-generation-documents.onrender.com/health
+https://api-generation-documents.onrender.com/docs
+https://api-generation-documents.onrender.com/metrics
 ```
 
 ## Benchmark
@@ -287,3 +289,4 @@ curl http://localhost:3000/openapi.json
 - [postman/ProcessIQ Document Service.postman_collection.json](postman/ProcessIQ%20Document%20Service.postman_collection.json)
 - [docs/curl-commands.md](docs/curl-commands.md)
 - [render.yaml](render.yaml)
+- `https://api-generation-documents.onrender.com/`
