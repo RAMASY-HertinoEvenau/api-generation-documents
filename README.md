@@ -18,8 +18,8 @@ Le traitement est fait de maniere asynchrone avec Bull et Redis. Les PDFs sont s
 - OpenAPI JSON : `GET /openapi.json`
 - Health check : `GET /health`
 - Metriques Prometheus : `GET /metrics`
-- Collection Postman : [postman/ProcessIQ Document Service.postman_collection.json](/d:/projet/ProcessIQ%20Test/postman/ProcessIQ%20Document%20Service.postman_collection.json)
-- Commandes `curl` : [docs/curl-commands.md](/d:/projet/ProcessIQ%20Test/docs/curl-commands.md)
+- Collection Postman : [postman/ProcessIQ Document Service.postman_collection.json](postman/ProcessIQ%20Document%20Service.postman_collection.json)
+- Commandes `curl` : [docs/curl-commands.md](docs/curl-commands.md)
 
 ## Endpoints
 
@@ -42,13 +42,13 @@ curl -X POST http://localhost:3000/api/documents/batch \
 
 Fichiers principaux :
 
-- [src/server.ts](/d:/projet/ProcessIQ%20Test/src/server.ts) : demarrage de l'API
-- [src/worker.ts](/d:/projet/ProcessIQ%20Test/src/worker.ts) : worker Bull
-- [src/queues/documentQueue.ts](/d:/projet/ProcessIQ%20Test/src/queues/documentQueue.ts) : abstraction de la file Bull / memoire
-- [src/lib/pdfWorkerPool.ts](/d:/projet/ProcessIQ%20Test/src/lib/pdfWorkerPool.ts) : pool de `worker_threads`
-- [src/workers/pdfRender.worker.ts](/d:/projet/ProcessIQ%20Test/src/workers/pdfRender.worker.ts) : rendu PDF dans un thread dedie
-- [src/services/batchService.ts](/d:/projet/ProcessIQ%20Test/src/services/batchService.ts) : creation et suivi des batches
-- [src/services/prometheusService.ts](/d:/projet/ProcessIQ%20Test/src/services/prometheusService.ts) : metriques Prometheus
+- [src/server.ts](src/server.ts) : demarrage de l'API
+- [src/worker.ts](src/worker.ts) : worker Bull
+- [src/queues/documentQueue.ts](src/queues/documentQueue.ts) : abstraction de la file Bull / memoire
+- [src/lib/pdfWorkerPool.ts](src/lib/pdfWorkerPool.ts) : pool de `worker_threads`
+- [src/workers/pdfRender.worker.ts](src/workers/pdfRender.worker.ts) : rendu PDF dans un thread dedie
+- [src/services/batchService.ts](src/services/batchService.ts) : creation et suivi des batches
+- [src/services/prometheusService.ts](src/services/prometheusService.ts) : metriques Prometheus
 
 ### Sequence de traitement
 
@@ -143,9 +143,9 @@ Metriques exposees :
 
 Fichiers lies :
 
-- [docs/dashboard-observabilite.md](/d:/projet/ProcessIQ%20Test/docs/dashboard-observabilite.md)
-- [docs/grafana-dashboard.json](/d:/projet/ProcessIQ%20Test/docs/grafana-dashboard.json)
-- [docs/rapport-performance.md](/d:/projet/ProcessIQ%20Test/docs/rapport-performance.md)
+- [docs/dashboard-observabilite.md](docs/dashboard-observabilite.md)
+- [docs/grafana-dashboard.json](docs/grafana-dashboard.json)
+- [docs/rapport-performance.md](docs/rapport-performance.md)
 
 ## Prerequis
 
@@ -207,8 +207,8 @@ npm run start:worker
 
 Fichiers :
 
-- [Dockerfile](/d:/projet/ProcessIQ%20Test/Dockerfile)
-- [docker-compose.yml](/d:/projet/ProcessIQ%20Test/docker-compose.yml)
+- [Dockerfile](Dockerfile)
+- [docker-compose.yml](docker-compose.yml)
 
 Lancement :
 
@@ -237,7 +237,7 @@ Les volumes `mongo-data` et `redis-data` gardent les donnees entre deux lancemen
 
 ## Deploiement Render
 
-Le fichier [render.yaml](/d:/projet/ProcessIQ%20Test/render.yaml) prepare :
+Le fichier [render.yaml](render.yaml) prepare :
 
 - un service web pour l'API
 - un worker
@@ -281,9 +281,9 @@ curl http://localhost:3000/openapi.json
 
 ## Livrables
 
-- [docker-compose.yml](/d:/projet/ProcessIQ%20Test/docker-compose.yml)
-- [src/scripts/benchmark.ts](/d:/projet/ProcessIQ%20Test/src/scripts/benchmark.ts)
-- [docs/rapport-performance.md](/d:/projet/ProcessIQ%20Test/docs/rapport-performance.md)
-- [postman/ProcessIQ Document Service.postman_collection.json](/d:/projet/ProcessIQ%20Test/postman/ProcessIQ%20Document%20Service.postman_collection.json)
-- [docs/curl-commands.md](/d:/projet/ProcessIQ%20Test/docs/curl-commands.md)
-- [render.yaml](/d:/projet/ProcessIQ%20Test/render.yaml)
+- [docker-compose.yml](docker-compose.yml)
+- [src/scripts/benchmark.ts](src/scripts/benchmark.ts)
+- [docs/rapport-performance.md](docs/rapport-performance.md)
+- [postman/ProcessIQ Document Service.postman_collection.json](postman/ProcessIQ%20Document%20Service.postman_collection.json)
+- [docs/curl-commands.md](docs/curl-commands.md)
+- [render.yaml](render.yaml)
